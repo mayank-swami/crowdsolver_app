@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Failed | Society App</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#6a85f1,#b58ded);
+    }
+
+    .mobile-frame{
+      width:360px;
+      height:720px;
+      background:#fff;
+      border-radius:30px;
+      padding:24px;
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:center;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .icon{
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    h2{
+      color:#e53935;
+      margin-bottom:10px;
+    }
+
+    p{
+      font-size:15px;
+      color:#555;
+      margin-bottom:30px;
+      padding:0 10px;
+    }
+
+    .btn{
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      background:linear-gradient(135deg,#4a63e7,#6f8cff);
+      color:#fff;
+    }
+
+    .btn:hover{opacity:.95}
+
+    .note{
+      margin-top:25px;
+      font-size:12px;
+      color:#999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+
+    <div class="icon">❌</div>
+
+    <h2>Not Logged In</h2>
+    <p>Wrong credentials entered.<br>Please enter the correct email / flat number and password.</p>
+    <a href="/login/">
+    <button class="btn">Re-Login</button>
+    </a>
+
+    <div class="note">Society App • Secure Access</div>
+
+  </div>
+
+</body>
+</html>

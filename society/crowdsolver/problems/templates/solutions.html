@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Solutions | Society App</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#6a85f1,#b58ded);
+    }
+
+    .mobile-frame{
+      width:360px;
+      height:720px;
+      background:#fff;
+      border-radius:30px;
+      padding:22px;
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .header{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:15px;
+    }
+
+    .header h2{
+      font-size:20px;
+      color:#222;
+    }
+
+    .solutions{
+      flex:1;
+      overflow-y:auto;
+    }
+
+    .solution-card{
+      background:#f7f8ff;
+      border-radius:18px;
+      padding:16px;
+      margin-bottom:14px;
+      box-shadow:0 8px 16px rgba(0,0,0,.12);
+    }
+
+    .solution-card h4{
+      font-size:15px;
+      color:#333;
+      margin-bottom:6px;
+    }
+
+    .solution-card p{
+      font-size:14px;
+      color:#555;
+      margin-bottom:10px;
+    }
+
+    .meta{
+      font-size:12px;
+      color:#777;
+      margin-bottom:12px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+    }
+
+    .approve,.reject{
+      flex:1;
+      padding:12px;
+      border:none;
+      border-radius:14px;
+      font-size:14px;
+      font-weight:600;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .approve{
+      background:linear-gradient(135deg,#43a047,#66bb6a);
+    }
+
+    .reject{
+      background:linear-gradient(135deg,#e53935,#ef5350);
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+
+    <div class="header">
+        <a href = /profile>
+      <span style="font-size:20px;cursor:pointer">⬅️</span>
+        </a>
+      <h2>All Solutions</h2>
+    </div>
+
+    <div class="solutions">
+
+      <div class="solution-card">
+        {% for solu in sol%}
+        <h4>Solution ID: {{ solu.id }}</h4>
+        <p>{{ solu.suggestion.content }}</p>
+        <div class="meta">Approvals: {{ solu.approval_count }} | Rejections: {{ solu.reject_count }}</div>
+        {% endfor %}    
+        
+        <div class="meta"></div>
+        <div class="actions">
+          <button class="approve">Approve</button>
+          <button class="reject">Reject</button>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+  </div>
+
+</body>
+</html>

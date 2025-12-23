@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Access | Society App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a85f1, #b58ded);
+    }
+
+    .mobile-frame {
+      width: 360px;
+      height: 720px;
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 30px 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      background: #eaf0ff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      color: #4a63e7;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: #222;
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+      color: #666;
+      padding: 0 10px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .login {
+      background: linear-gradient(135deg, #4a63e7, #6f8cff);
+      color: #fff;
+    }
+
+    .signup {
+      background: #f2f4ff;
+      color: #4a63e7;
+      border: 2px solid #4a63e7;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+
+    <div class="icon">👥</div>
+
+    <h1>Member Access</h1>
+    <p>Please login if you already have an account or sign up to join your society</p>
+    <a href ="/login">
+    <button class="btn login">🔐 Login</button>
+    </a>
+    <a href ="/signup">
+    <button class="btn signup">📝 Sign Up</button>
+    </a>
+    <a href ="/home">
+    <button class="btn back">🔙 Back</button>
+    </a>
+
+    <div class="footer">Society App • Member Panel</div>
+
+  </div>
+
+</body>
+</html>

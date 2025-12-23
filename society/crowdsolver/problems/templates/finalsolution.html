@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Solution | Society App</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+    body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#6a85f1,#b58ded)}
+
+    .mobile-frame{
+      width:360px;
+      height:720px;
+      background:#fff;
+      border-radius:30px;
+      padding:22px;
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+    .back{font-size:20px;cursor:pointer}
+    .header h2{font-size:20px;color:#222}
+
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .success-card{
+      background:linear-gradient(135deg,#43a047,#66bb6a);
+      color:#fff;
+      padding:22px;
+      border-radius:22px;
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .success-card h3{font-size:18px;margin-bottom:8px}
+    .success-card p{font-size:14px;opacity:.95}
+
+    .solution-box{
+      background:#f7f8ff;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 8px 18px rgba(0,0,0,.12);
+      margin-bottom:16px;
+    }
+
+    .solution-box h4{font-size:15px;color:#333;margin-bottom:6px}
+    .solution-box p{font-size:14px;color:#555;margin-bottom:10px}
+
+    .meta{display:flex;justify-content:space-between;font-size:12px;color:#4a63e7}
+
+    .status{
+      margin-top:auto;
+      background:#eaf0ff;
+      border-radius:16px;
+      padding:14px;
+      text-align:center;
+      font-size:14px;
+      color:#333;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#4a63e7;
+      color:#fff;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+  </style>
+</head>
+<body>
+  <form method="post">
+    {% csrf_token%}
+
+  <div class="mobile-frame">
+
+    <div class="header">
+        <a href="/dashboard" class="back" >
+      <div class="back">⬅️</div>
+        </a>
+      <h2>Final Solution</h2>
+    </div>
+
+    <div class="success-card">
+      <h3>Solution Approved!</h3>
+      <p>The proposed solution has been approved and is now being implemented.</p>
+      <div class="solution-box">
+       {% for vote in allvotes %}
+        
+        <h4>{{ vote.content }}</h4>
+        <p>👍 Approved by {{ vote.approval }} members</p>
+            <div class="meta">
+          <div>Submitted by: {{ vote.name }}</div>
+          <div class="badge">Final Solution</div>
+         
+        </div> 
+        {% endfor %}
+      </div>
+
+
+    <div class="status">
+    
+    </div>
+
+  </div>
+</form>
+
+</body>
+</html> 

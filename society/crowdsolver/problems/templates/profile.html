@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Society App</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+    body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#6a85f1,#b58ded)}
+    .mobile-frame{width:360px;height:720px;background:#fff;border-radius:30px;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.25);display:flex;flex-direction:column}
+    .header{display:flex;align-items:center;gap:10px;margin-bottom:15px}
+    .back{font-size:20px}
+    .header h2{font-size:20px;color:#222}
+
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .profile-card{background:linear-gradient(135deg,#4a63e7,#6f8cff);color:#fff;padding:20px;border-radius:20px;margin-bottom:20px;text-align:center}
+    .avatar{width:70px;height:70px;border-radius:50%;background:#fff;color:#4a63e7;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+    .profile-card h3{font-size:18px;margin-bottom:5px}
+    .profile-card p{font-size:13px;opacity:.95}
+
+    .section-title{font-size:15px;color:#333;margin:10px 0}
+
+    .issue{background:#f7f8ff;border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:0 8px 16px rgba(0,0,0,.12)}
+    .issue h4{font-size:14px;color:#333;margin-bottom:6px}
+    .issue p{font-size:12px;color:#666;margin-bottom:8px}
+    .reaction{font-size:12px;color:#4a63e7}
+
+    .notification{background:#fff4e5;border-left:5px solid #ff9800;border-radius:12px;padding:12px;font-size:13px;color:#444;margin-bottom:10px}
+
+    .scroll{flex:1;overflow-y:auto}
+  </style>
+</head>
+<body>
+  <div class="mobile-frame">
+
+    <div class="header">
+        <a href ="/dashboard" class="back">
+      <div class="back">⬅️</div></a>
+      <h2>My Profile</h2>
+    </div>
+
+    <div class="profile-card">
+      <div class="avatar">👤</div>
+      {{ memberinfo.name }}
+      <p>{{ memberinfo.email_flatno }}</p>
+
+   
+    </div>
+
+    <div class="scroll">
+
+      <div class="section-title">My Issues</div>
+{% comment %} 
+      <div class="issue">
+        <h4>Water Leakage</h4>
+        <p>Leakage near staircase on 2nd floor</p>
+        <div class="reaction">👍 12 members reacted</div>
+      </div>
+
+      <div class="issue">
+        <h4>Lift Not Working</h4>
+        <p>Lift stops between floors</p>
+        <div class="reaction">👍 7 members reacted</div>
+      </div> {% endcomment %}
+
+      {% comment %} <div class="section-title">Notifications</div> {% endcomment %}
+        {% for prob in problem  %}
+        <div class="notification">{{prob.title}}</div>
+        {% endfor  %}
+       <a href="/logout/"> <button class="logout-btn">🚪 Logout</button></a>
+
+       <a href = "/solutions/"> <button class="View solutions-btn">📄 View Solutions</button></a>
+      
+
+
+    </div>
+
+  </div>
+</body>
+</html>

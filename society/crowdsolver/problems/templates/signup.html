@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Society App | Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a85f1, #b58ded);
+    }
+
+    .mobile-frame {
+      width: 360px;
+      height: 720px;
+      background: #ffffff;
+      border-radius: 30px;
+      padding: 30px 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      background: #eaf0ff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      color: #4a63e7;
+      margin: 20px auto 15px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: #222;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1.5px solid #ddd;
+      margin-bottom: 18px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4a63e7;
+    }
+
+    .login-btn {
+      margin-top: 10px;
+      padding: 15px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #4a63e7, #6f8cff);
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      opacity: 0.95;
+    }
+
+    .forgot {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 14px;
+      color: #4a63e7;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-frame">
+
+    <div class="icon">🔐</div>
+    <h1>Sign Up</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <label>Email / Flat No.</label>
+      <input type="text" name="email_flatno" placeholder="Enter email or flat number" required>
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required>
+
+      <button class="login-btn" type="submit">Sign Up</button>
+    </form>
+    <a href="/login">
+    <div class="forgot">Already have an account? Login</div>
+    </a>
+
+    <div class="footer">Secure Society Access • Frontend UI</div>
+
+  </div>
+
+</body>
+</html>
+
+
